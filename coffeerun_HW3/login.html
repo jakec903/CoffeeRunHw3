@@ -1,0 +1,115 @@
+<!--This code has been assisted and provided by: https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_structure_a_web_form for learning purposes-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link href="stylesheets/payment-form.css" rel="stylesheet">
+  </head>
+  <body>
+    <form data-coffee-order="form">
+      <h1>Payment form</h1>
+      <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+      <section>
+          <h2>Contact information</h2>
+          <fieldset>
+              <legend>Title</legend>
+              <ul>
+                  <li>
+                      <label for="title_1">
+                          <div class="radio"><input type="radio" id="title_1" name="title" value="General"></div>
+                          General
+                      </label>
+                  </li>
+                  <li>
+                      <label for="title_2">
+                        <div class="radio"><input type="radio" id="title_2" name="title" value="Captain"></div>
+                          Captain
+                      </label>
+                  </li>
+                  <li>
+                      <label for="title_3">
+                        <div class="radio"><input type="radio" id="title_3" name="title" value="Private"></div>
+                          Private
+                      </label>
+                  </li>
+              </ul>
+          </fieldset>
+          <p>
+              <label for="name">
+                  <span>Name: </span>
+                  <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input class="form-control" type="text" id="name" name="username">
+          </p>
+          <p>
+              <label for="mail">
+                  <span>E-mail: </span>
+                  <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input class="form-control" type="email" id="emailInput" name="emailAddress" placeholder="picard@starfleet.com">
+          </p>
+          <p>
+              <label for="pwd">
+                  <span>Password: </span>
+                  <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input class="form-control" type="password" id="pwd" name="password">
+          </p>
+      </section>
+      <section>
+          <h2>Payment information</h2>
+          <p>
+              <label for="card">
+                  <span>Card type:</span>
+              </label>
+              <select id="card" name="usercard">
+                  <option value="visa">Visa</option>
+                  <option value="mc">Mastercard</option>
+                  <option value="amex">American Express</option>
+              </select>
+          </p>
+          <p>
+              <label for="number">
+                  <span>Card number:</span>
+                  <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="tel" id="number" name="cardnumber">
+          </p>
+          <p>
+              <label for="date">
+                  <span>Expiration date:</span>
+                  <strong><abbr title="required">*</abbr></strong>
+              </label>
+              <input type="date" id="date" name="expiration">
+          </p>
+      </section>
+      <section>
+          <p>
+              <button type="submit" class="btn btn-outline-primary" onclick="Open_Modal()">Validate the payment</button>
+          </p>
+      </section>
+    </form>
+
+
+
+    <div id="Modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <p id="payment_stuff">Thank you very much for purchasing the coffees!</p>
+        </div>
+      
+      </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>    
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main2.js" charset="utf-8"></script>
+  </body>
+</html>
